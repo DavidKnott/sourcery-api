@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :goods, only: [:create, :show]
       resources :locations, only: [:create, :show], key: :ethereum_address
+      get "get_locations_for_good_path", to: "get_locations_for_good_path#index"
     end
   end
 end
