@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :goods, only: [:create, :show]
-      resources :locations, only: [:create]
+      resources :locations, only: [:create, :show], key: :ethereum_address
     end
   end
 end
