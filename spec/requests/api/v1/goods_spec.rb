@@ -9,7 +9,7 @@ describe "Goods API" do
     expect(Good.first.description).to eq "A delicous coffee from Colombia."
   end
 
-  it "can return a good given it's name" do
+  it "can return a good given its name" do
     expected_good = create(:good, name: "cool coffee", description: "A delicous coffee from Colombia.")
     get "/api/v1/goods/#{expected_good.id }"
 

@@ -16,7 +16,6 @@ paths.
 Future iteration plans include the ability to add goods/products and register
 change of possession (e.g., between producer and transport).
 
-*This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).*
 
 ### About Us
 

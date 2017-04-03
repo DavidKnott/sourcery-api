@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.3.0
+services:
+  - postgresql
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
+before_script: bundle exec rake db:create
+cache: bundler
+sudo: false
