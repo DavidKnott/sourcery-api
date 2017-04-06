@@ -4,6 +4,15 @@
 # this file to always be loaded, without a need to explicitly require it in any
 # files.
 #
+require 'simplecov'
+require 'simplecov-shield'
+SimpleCov.start 'rails' do
+  add_filter "app/mailers/application_mailer.rb"
+  add_filter "app/jobs/application_job.rb"
+  add_filter "app/channels/application_cable/channel.rb"
+  add_filter "app/channels/application_cable/connection.rb"
+end
+# SimpleCov.formatter = SimpleCov::Formatter::ShieldFormatter
 # Given that it is always loaded, you are encouraged to keep this file as
 # light-weight as possible. Requiring heavyweight dependencies from this file
 # will add to the boot time of your test suite on EVERY test run, even for an
