@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170406121932) do
+ActiveRecord::Schema.define(version: 20170411032509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 20170406121932) do
     t.string   "zipcode"
   end
 
+  create_table "lots", force: :cascade do |t|
+    t.string   "uid"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_lots_on_product_id", using: :btree
+    t.index ["uid"], name: "index_lots_on_uid", using: :btree
+  end
+
   create_table "products", force: :cascade do |t|
     t.text     "name"
     t.text     "description"
@@ -36,4 +45,5 @@ ActiveRecord::Schema.define(version: 20170406121932) do
     t.datetime "updated_at",  null: false
   end
 
+  add_foreign_key "lots", "products"
 end
