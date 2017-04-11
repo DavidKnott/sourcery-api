@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :location do
+  factory :checkpoint do
     creator          { Faker::Name.first_name }
     street_address   { Faker::Address.street_address}
     city             { Faker::Address.city }

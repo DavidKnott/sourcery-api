@@ -7,7 +7,7 @@ you know where you coffee *really* came from? Is your apple truly from a
 sustainable farm? This app addresses these problems by adding visibility to the supply chain process by allowing users to add, update, and
 read transactions on the Ethereum blockchain.
 
-This Rails Api  will provide our [React front end]() with the information it needs (ethereum addresses) to query our  [smart-contract ecosystem]() on the Ethereum blockchain.  It will also store information that is not blockchain pertinent about the goods, transactions, and locations we'll be dealing with such as (name, price, location, &c).
+This Rails Api  will provide our [React front end]() with the information it needs (ethereum addresses) to query our  [smart-contract ecosystem]() on the Ethereum blockchain.  It will also store information that is not blockchain pertinent about the goods, transactions, and checkpoints we'll be dealing with such as (name, price, checkpoint, &c).
 
 We are just getting started on this project. Eventually, users will be able to
 visit the root page and view a list of items and their respective supply chain

@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
-Location.destroy_all
+Checkpoint.destroy_all
 
 10.times do
   FactoryGirl.create(:product)
-  FactoryGirl.create(:location)
+  FactoryGirl.create(:checkpoint)
 end
 
