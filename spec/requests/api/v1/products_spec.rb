@@ -26,6 +26,23 @@ describe "Products API" do
     expect(actual_good["description"]).to eq Product.last.description
   end
 
+  context "listing all products" do
+    let!(:product_1) { create(:product, name: "coffee") }
+    let!(:product_2) { create(:product, name: "bananas") }
+    let!(:product_3) { create(:product, name: "champagne grapes") }
+    let(:product_names) { [product_1.name, product_2.name, product_3.name] }
+
+    it "returns a list including product names" do
+      get '/api/v1/products'
+      products = JSON.parse(response.body)
+
+      expect(products.length).to eq 3
+      products.each do |product|
+        expect(product_names).to include(product['name'])
+      end
+    end
+  end
+
   context "Sad paths" do
     describe "If I fail to include a required param, like name" do
       it "I get a 400" do
