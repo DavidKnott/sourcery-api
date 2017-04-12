@@ -1,17 +1,11 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
+Lot.destroy_all
 Product.destroy_all
 Checkpoint.destroy_all
 
 10.times do
   FactoryGirl.create(:product)
   FactoryGirl.create(:checkpoint)
+  5.times { FactoryGirl.create(:lot, product: Product.all.sample) }
 end
 
 FactoryGirl.create(:checkpoint, ethereum_address: '0x4a48d76b56f16fe9200bcc6a7fc8e85cf8e4f7b1')
