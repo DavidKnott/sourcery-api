@@ -33,8 +33,8 @@ cd sourcery-api/
 // install dependencies
 bundle
 
-// create db and migrate
-rake db:{create,migrate}
+// create db and load the schema
+rake db:{create,schema:load}
 
 // run the tests
 rspec
