@@ -9,7 +9,6 @@ describe "Checkpoints API" do
         city: "Medellín", 
         state: "Medellín", 
         country: "Colombia", 
-        ethereum_address: "0x7da07904ffc79d7a69afdecb7b1eb0d767b37803",
         zipcode: "050022",
         lat: 6.27053,
         lng: -75.57211999999998
@@ -19,7 +18,8 @@ describe "Checkpoints API" do
     expect(response.status).to eq 201
     expect(Checkpoint.first.creator).to eq "John"
     expect(Checkpoint.first.street_address).to eq "Cr 70C No. 4-42 OF 203, Medellín"
-    expect(Checkpoint.first.ethereum_address).to eq "0x7da07904ffc79d7a69afdecb7b1eb0d767b37803"
+    expect(Checkpoint.first.lat).to eq 6.27053
+    expect(Checkpoint.first.ethereum_address).not_to be_nil 
   end
 
   it "can return a checkpoint given its address" do
@@ -44,7 +44,6 @@ describe "Checkpoints API" do
             city: "Medellín", 
             state: "Medellín", 
             country: "Colombia", 
-            ethereum_address: "0x7da07904ffc79d7a69afdecb7b1eb0d767b37803",
             zipcode: "050022",
             lat: 6.27053,
             lng: -75.57211999999998

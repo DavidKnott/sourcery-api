@@ -22,9 +22,15 @@ class Api::V1::CheckpointsController < ApplicationController
 
   def checkpoint_params
     params.require(:checkpoint).permit(
-      :creator, :street_address, :city, 
-      :state, :country, :ethereum_address, 
-      :lat, :lng, :zipcode
+      :creator,
+      :street_address,
+      :city,
+      :state,
+      :country,
+      :ethereum_address,
+      :lat,
+      :lng,
+      :zipcode
     )
   end
 end
