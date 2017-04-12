@@ -15,7 +15,23 @@ describe "Checkpoints API" do
       }
     }
 
+    response_checkpoint = JSON.parse(response.body)
+
     expect(response.status).to eq 201
+    expect(response_checkpoint).to have_key 'creator'
+    expect(response_checkpoint).to have_key 'street_address'
+    expect(response_checkpoint).to have_key 'city'
+    expect(response_checkpoint).to have_key 'state'
+    expect(response_checkpoint).to have_key 'country'
+    expect(response_checkpoint).to have_key 'zipcode'
+    expect(response_checkpoint).to have_key 'lat'
+    expect(response_checkpoint).to have_key 'lng'
+    expect(response_checkpoint).to have_key 'ethereum_address'
+
+    expect(response_checkpoint['creator']).to eq "John"
+    expect(response_checkpoint['country']).to eq "Colombia"
+    expect(response_checkpoint['zipcode']).to eq "050022"
+    expect(response_checkpoint['lat']).to eq "6.27053"
     expect(Checkpoint.first.creator).to eq "John"
     expect(Checkpoint.first.street_address).to eq "Cr 70C No. 4-42 OF 203, Medellín"
     expect(Checkpoint.first.lat).to eq 6.27053
