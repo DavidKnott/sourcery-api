@@ -8,6 +8,5 @@ FactoryGirl.define do
     lat              { Faker::Address.latitude }
     lng              { Faker::Address.longitude }
     country          { Faker::Address.country }
-    ethereum_address { Faker::Crypto.sha256 }
   end
 end
