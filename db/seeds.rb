@@ -14,7 +14,7 @@ Checkpoint.destroy_all
   FactoryGirl.create(:checkpoint)
 end
 
-FactoryGirl.create(:location, ethereum_address: '4a48d76b56f16fe9200bcc6a7fc8e85cf8e4f7b5488ff229209748345cb0f559')
-FactoryGirl.create(:location, ethereum_address: '8dc5b8c7528b8846899dbd56e6ffbf7aeff97cbb8ffd611c7d56ea19b26bfbd0')
-FactoryGirl.create(:location, ethereum_address: '03ca2072179b8dc420eb5a88e1f2a93f1d3cbc3087070c91869e437a8e15b09a')
+FactoryGirl.create(:checkpoint, ethereum_address: '0x4a48d76b56f16fe9200bcc6a7fc8e85cf8e4f7b1')
+FactoryGirl.create(:checkpoint, ethereum_address: '0x4a48d76b56f16fe9200bcc6a7fc8e85cf8e4f7b2')
+FactoryGirl.create(:checkpoint, ethereum_address: '0x4a48d76b56f16fe9200bcc6a7fc8e85cf8e4f7b3')
 

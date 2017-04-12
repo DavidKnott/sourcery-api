@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sourcery API</title>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <h1>Welcome to the API for Sourcery!</h1>
+    <h3>Endpoints:</h3>
+    <ul>
+    <% Rails.application.routes.routes.each do |route| %>
+      <% if route.path.spec.to_s.starts_with?("/api") %>
+          <li>
+            <%= route.verb.to_s.gsub("$)", "").gsub("(?-mix:^", "") %>
+            <%= route.path.spec.to_s.gsub("(.:format)", "") %>
+          </li>
+      <% end %>
+    <% end %>
+    </ul>
+  </body>
+</html>
