@@ -12,7 +12,7 @@ class Api::V1::CheckpointsController < ApplicationController
   def create
     checkpoint = Checkpoint.new(checkpoint_params)
     if checkpoint.save
-      head 201
+      render json: checkpoint, status: 201
     else
       head 400
     end
