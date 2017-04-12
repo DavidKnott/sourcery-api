@@ -15,7 +15,7 @@ describe "Lots API" do
     lot = JSON.parse(response.body)
 
     expect(response.status).to eq 201
-    expect(lot['id']).to be_an Integer
+    expect(lot['id']).to eq Lot.first.id
   end
 
   context "sad path" do
