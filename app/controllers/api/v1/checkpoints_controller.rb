@@ -1,4 +1,5 @@
 class Api::V1::CheckpointsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create] 
 
   def show
     checkpoint = Checkpoint.find_by(ethereum_address: params[:id])

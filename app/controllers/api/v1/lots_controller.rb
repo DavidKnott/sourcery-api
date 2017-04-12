@@ -1,4 +1,5 @@
 class Api::V1::LotsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create] 
 
   def create
     product = Product.find_by_id(product_id)
