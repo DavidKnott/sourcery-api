@@ -4,8 +4,7 @@ class Api::V1::LotsController < ApplicationController
   def index
     product = Product.find_by_id(params[:product_id])
     if product
-      lot_ids = product.lots.pluck(:id)
-      render json: lot_ids
+      render json: product.lot_ids
     else
       head 400
     end
