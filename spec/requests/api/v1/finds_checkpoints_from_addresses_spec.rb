@@ -35,4 +35,12 @@ describe "When given an array of checkpoints ethereum addresses" do
     expect(body[:message]).to eq "Invalid address(es)"
     expect(body[:invalid_addresses]).to include(invalid_address)
   end
+
+  it "returns a 400 and message if addresses is empty" do
+    get "/api/v1/get_checkpoints_for_good_path", params: {checkpoints: []}
+    
+    expect(response.status).to eq 400
+    body = JSON.parse(response.body, symbolize_names: true)
+    expect(body[:message]).to eq "No addresses sent"
+  end
 end
