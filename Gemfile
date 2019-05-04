@@ -11,8 +11,7 @@ gem "pg", "~> 0.18"
 gem "puma", "~> 3.0"
 gem "jbuilder", "~> 2.5"
 
-gem "simplecov", require: false, group: :test
-gem "simplecov-shield"
+gem "simplecov", "~> 0.16.1", require: false, group: :test
 gem "faker"
 gem "factory_bot_rails"
 
