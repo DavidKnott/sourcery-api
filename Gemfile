@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'simplecov', :require => false, :group => :test
 gem 'simplecov-shield'
 gem 'faker'
-gem 'factory_girl_rails'
+gem "factory_bot_rails"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

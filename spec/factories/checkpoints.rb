@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :checkpoint do
     creator          { Faker::Name.first_name }
     street_address   { Faker::Address.street_address}
